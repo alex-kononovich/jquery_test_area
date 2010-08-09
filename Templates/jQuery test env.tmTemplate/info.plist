@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>command</key>
+	<string>path="/Users/skif/Tmp/"
+project_name=$(CocoaDialog standard-inputbox \
+			--title "Test area name" \
+			--text "jquery_test" \
+			--informative-text "Enter test area name:");
+	
+if [ -n "$project_name" ]; then
+  fullpath=$path/$(tail -n1 &lt;&lt;&lt;"$project_name");
+  mkdir $fullpath;
+  cp index.html $fullpath;
+  cd $fullpath;
+  wget http://code.jquery.com/jquery-latest.min.js jquery.js;
+  mv jquery-latest.min.js jquery.js;
+  mate . ;
+fi</string>
+	<key>extension</key>
+	<string>html</string>
+	<key>name</key>
+	<string>jQuery test env</string>
+	<key>uuid</key>
+	<string>29B3D93F-E2B5-4213-BA53-247980256F06</string>
+</dict>
+</plist>
